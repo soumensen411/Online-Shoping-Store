@@ -1,0 +1,32 @@
+<script>
+fetch("https://api.escuelajs.co/api/v1/products")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("product-container");
+
+    data.slice(0, 10).forEach(product => {
+      const card = document.createElement("div");
+      card.classList.add("container");
+
+      card.innerHTML = `
+        <div class="image-holder">
+          <img src="${product.images[0]}" alt="">
+        </div>
+        <div class="info-holder">
+          <h1>${product.title}</h1>
+          <p>price: $${product.price}</p>
+          <button onclick="buyProduct('${product.title}')">Buy Now</button>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.log("Error:", error);
+  });
+
+function buyProduct(name) {
+  alert("You bought " + name);
+}
+</script>
