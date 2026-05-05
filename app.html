@@ -3,11 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>Online-Shoping-Shop</title>
+    <title>SmartShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Welcome to our shop</h1>
-    <script src="app.js"></script>
+
+    <!-- Navbar Section -->
+    <nav class="sticky top-0 z-50 bg-gray-900 border-b border-white/10 shadow-lg">
+        <div class="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#home" class="text-white text-2xl font-bold">SmartShop</a>
+            <div class="flex gap-10">
+                <a href="#home" class="text-sm text-gray-300 hover:text-white">Home</a>
+                <a href="#products" class="text-sm text-gray-300 hover:text-white">Products</a>
+                <a href="#reviews" class="text-sm text-gray-300 hover:text-white">Reviews</a>
+                <a href="#about" class="text-sm text-gray-300 hover:text-white">About Us</a>
+                <a href="#contact" class="text-sm text-gray-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="relative w-full" style="height: calc(100vh - 64px);">
+        <img src="images/banner.jpg" alt="SmartShop Banner" class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center px-24" style="background: linear-gradient(105deg, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.35) 55%, transparent 100%);">
+            <div class="max-w-lg">
+                <span class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Limited Time Offer</span>
+                <h1 class="text-white text-7xl font-bold leading-tight mb-4">Mega Sale<br>Up to 50% Off</h1>
+                <p class="text-white text-base font-light mb-8 max-w-sm opacity-75">Shop the best deals on electronics, fashion & more — all in one place.</p>
+                <a href="#products" class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Product Section -->
+    <div id="products" class="w-full px-6 pt-20">
+        <div class="mb-9 text-center">
+            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">What We Offer</p>
+            <h2 class="text-4xl font-bold text-gray-900">Featured Products</h2>
+        </div>
+
+        <!-- MEN'S -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Men's Clothing</h3>
+        <div class="grid grid-cols-4 gap-4 mb-12">
+
+            <!-- Men 1 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/shirt.jpg" class="w-full h-56 object-cover" alt="shirt">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Classic Canvas Shirt</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$109</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men 2 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/t-shirt.jpg" class="w-full h-56 object-cover" alt="T-Shirt">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Slim Fit Crew T-Shirt</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$22</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men 3 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/jacket.jpg" class="w-full h-56 object-cover" alt="Jacket">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Casual Cotton Jacket</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$56</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men 4 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/pant.jpg" class="w-full h-56 object-cover" alt="Pant">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Classic Pant</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$16</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- WOMEN'S -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Women's Clothing</h3>
+        <div class="grid grid-cols-4 gap-4 mb-12">
+
+            <!-- Women 1 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/frock.jpg" class="w-full h-56 object-cover" alt="Frock">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Classic Button-Down Frock</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$13</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women 2 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/saare.png" class="w-full h-56 object-cover" alt="Saare">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Saare</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$30</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women 3 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/kurta.jpg" class="w-full h-56 object-cover" alt="Kurta">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Kurta</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$1000000000000</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women 4 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/western.jpg" class="w-full h-56 object-cover" alt="Women Tunic">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Short Sleeve Moisture Tunic</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$34</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CHILDREN'S -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Children's Clothing</h3>
+        <div class="grid grid-cols-4 gap-4 mb-12">
+
+            <!-- Child 1 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/kid1.jpg" class="w-full h-56 object-cover" alt="Kids1">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Kids Printed Cotton T-Shirt & Pant</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$8</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/kid2.jpg" class="w-full h-56 object-cover" alt="Kids2">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Kids Puffer T-Shirt</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$20</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/kid3.jpg" class="w-full h-56 object-cover" alt="Kids3">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Girls Floral Summer Dress</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$12</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child 4 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/kid4.jpg" class="w-full h-56 object-cover" alt="Kids Pants">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Boys Casual Jogger Pants</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$9</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ELECTRONICS -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Electronics</h3>
+        <div class="grid grid-cols-4 gap-4 mb-4">
+
+            <!-- Electronics 1 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/headphones.pg.jpg" class="w-full h-56 object-cover" alt="Headphones">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Headphones</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$64</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics 2 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/laptop.jpg" class="w-full h-56 object-cover" alt="Laptop">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">HP Laptop</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$109</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics 3 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/watch.jpg" class="w-full h-56 object-cover" alt="Watch">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Rolex Watch</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$114</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics 4 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <img src="images/smartphone.jpg" class="w-full h-56 object-cover" alt="Smartphone">
+                <div class="p-5">
+                    <p class="text-sm font-medium text-gray-900 mb-3">Samsung Smartphone</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900">$999</span>
+                        <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Reviews Section -->
+    <div id="reviews" class="w-full px-6 pt-20">
+        <div class="mb-10 text-center">
+            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Testimonials</p>
+            <h2 class="text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="grid grid-cols-4 gap-5 mb-5">
+
+            <!-- Review 1 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Great products and very fast delivery! I am very happy with my purchase. Will definitely be ordering again from SmartShop!"</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/ronaldo.jpg" alt="Cristiano Ronaldo" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Cristiano Ronaldo</p>
+                        <p class="text-xs text-gray-400 mt-1">April 10, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Good quality products. The packaging was neat and delivery was on time. Will definitely buy again from SmartShop."</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/John Cena.jpg" alt="John Cena" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">John Cena</p>
+                        <p class="text-xs text-gray-400 mt-1">April 15, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Nice website! Very easy to use and navigate. The product quality is amazing. Highly recommended to everyone!"</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/michael.jpg" alt="Michael Jackson" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Michael Jackson</p>
+                        <p class="text-xs text-gray-400 mt-1">April 20, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Product was exactly as described. No complaints at all. Customer service was also very helpful and responsive."</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/chandler.jpg" alt="Chandler Bing" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Chandler Bing</p>
+                        <p class="text-xs text-gray-400 mt-1">May 1, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-4 gap-5">
+
+            <!-- Review 5 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Very satisfied with my purchase. Great value for money! The shipping was super fast too. 10/10 experience overall."</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/rachel.jpg" alt="Rachel Green" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Rachel Green</p>
+                        <p class="text-xs text-gray-400 mt-1">May 2, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"I'm really impressed with SmartShop. The range of products is excellent and pricing is very competitive. Loved it!"</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/jaime.jpg" alt="Jaime Lannister" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Jaime Lannister</p>
+                        <p class="text-xs text-gray-400 mt-1">May 3, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 7 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"Say my name. SmartShop. That's right. Outstanding service, fast shipping, quality products. I always win with SmartShop."</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/walter.jpg" alt="Walter White" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Walter White</p>
+                        <p class="text-xs text-gray-400 mt-1">May 4, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 8 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <p class="text-gray-500 text-sm italic mb-5">"I've shopped all around the world and SmartShop is genuinely one of the best. Fast, reliable, and such great quality!"</p>
+                <div class="flex items-center gap-3">
+                    <img src="images/Taylor Swift.jpg" alt="Taylor Swift" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">Taylor Swift</p>
+                        <p class="text-xs text-gray-400 mt-1">May 4, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- About Us Section -->
+    <div id="about" class="w-full px-6 pt-20 pb-20 bg-stone-50">
+        <div class="max-w-screen-xl mx-auto">
+
+            <!-- Section Header -->
+            <div class="mb-14 text-center">
+                <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Who We Are</p>
+                <h2 class="text-4xl font-bold text-gray-900">About SmartShop</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-12 items-center mb-16">
+
+                <img src="images/aboutus.jpg" class="w-full h-96 object-cover rounded-2xl" alt="About SmartShop">
+
+                <div>
+                    <span class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Est. 2024</span>
+                    <h3 class="text-3xl font-bold text-gray-900 leading-snug mb-5">
+                        Shopping Made<br>Simple & Smart
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        SmartShop was born from a simple idea — that everyone deserves access to quality products at honest prices, delivered with care. Since 2019, we've been building a marketplace that puts customers first, every single time.
+                    </p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                        From fashion to electronics, we curate only the best — so you don't have to spend hours searching. We're based in Chittagong, Bangladesh, and we ship across the country with speed and reliability.
+                    </p>
+                    <a href="#products" class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">
+                        Shop Now →
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-4 gap-6 mb-16">
+
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <p class="text-4xl font-bold mb-2 text-orange-500">50K+</p>
+                    <p class="text-sm font-medium text-gray-500">Happy Customers</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <p class="text-4xl font-bold mb-2 text-orange-500">1,200+</p>
+                    <p class="text-sm font-medium text-gray-500">Products Listed</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <p class="text-4xl font-bold mb-2 text-orange-500">3 Yrs</p>
+                    <p class="text-sm font-medium text-gray-500">In Business</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <p class="text-4xl font-bold mb-2 text-orange-500">4.9★</p>
+                    <p class="text-sm font-medium text-gray-500">Average Rating</p>
+                </div>
+
+            </div>
+
+            <!-- Meet the Owners -->
+            <div class="mb-4 text-center">
+                <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">The Team</p>
+                <h3 class="text-3xl font-bold text-gray-900 mb-10">Meet the Owners</h3>
+            </div>
+
+            <div class="grid grid-cols-3 gap-8">
+
+                <!-- Owner 1 -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <img src="images/alvee.jpeg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Tahmid Alvee">
+                    <p class="text-xl font-bold text-gray-900 mb-1">Tahmid Alvee</p>
+                    <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & CEO</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Visionary leader driving SmartShop's growth and strategy, ensuring every customer gets the best experience possible.</p>
+                </div>
+
+                <!-- Owner 2 -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <img src="images/soumen.jpg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Soumen Sen">
+                    <p class="text-xl font-bold text-gray-900 mb-1">Soumen Sen</p>
+                    <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & COO</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Operations expert keeping SmartShop running smoothly — from sourcing the finest products to ensuring fast, reliable delivery.</p>
+                </div>
+
+                <!-- Owner 3 -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                    <img src="images/tokitul.jpeg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Tokitul Osmani">
+                    <p class="text-xl font-bold text-gray-900 mb-1">Tokitul Osmani</p>
+                    <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & CTO</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tech innovator behind SmartShop's seamless platform, building the digital experience that makes shopping truly smart.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="max-w-2xl mx-auto px-6 pt-20 text-center">
+        <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Get In Touch</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
+        <p class="text-gray-500 text-sm mb-10">Have a question or need help? Send us a message and we'll get back to you within 24 hours.</p>
+
+  
+        <div class="flex justify-center gap-8 mb-10 text-xs text-gray-500">
+            <span>📧 smartshop@email.com</span>
+            <span>📞 +880 1705192734</span>
+            <span>📍 Chittagong, Bangladesh</span>
+        </div>
+
+        <form class="bg-white border border-gray-200 rounded-2xl p-8 text-left">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <input type="text" placeholder="Your name" class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+                <input type="email" placeholder="Your email" class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+            </div>
+            <textarea rows="4" placeholder="Your message..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none resize-none mb-4"></textarea>
+            <button type="submit" class="w-full text-white bg-gray-900 py-3 rounded-lg text-sm font-semibold hover:bg-orange-500">
+                Send Message →
+            </button>
+        </form>
+
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 mt-24">
+        <div class="border-t border-white/10"></div>
+        <div class="max-w-screen-xl mx-auto px-6 py-5 flex justify-center items-center">
+            <p class="text-gray-500 text-xs">© 2026 SmartShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+
 </body>
 </html>
