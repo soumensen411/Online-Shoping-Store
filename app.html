@@ -41,6 +41,62 @@
         </div>
     </nav>
 
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 z-[999] items-center justify-center" style="display:none; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(6px);">
+        <div class="bg-white border border-gray-200 rounded-3xl p-8 w-full max-w-md shadow-2xl text-gray-900" style="font-family: 'Courier New', monospace;">
+ 
+            <!-- Title -->
+            <div class="flex justify-center mb-6">
+                <span class="border border-gray-300 px-10 py-2 rounded-xl text-lg font-bold tracking-widest uppercase text-gray-800">CART</span>
+            </div>
+ 
+            <!-- Balance Row -->
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Balance</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">1000</div>
+            </div>
+ 
+            <!-- Add Money Row -->
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Add Money</div>
+                <input type="number" 
+                    class="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
+                <button class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
+            </div>
+ 
+            <!-- Cart Row -->
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Cart</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">-100</div>
+            </div>
+ 
+            <!-- Delivery Charge -->
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Delevery Charge</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">-120</div>
+            </div>
+ 
+            <!-- Discount -->
+            <div class="flex items-center gap-3 mb-6">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Discount</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">50%</div>
+            </div>
+ 
+            <!-- Total Balance -->
+            <div class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
+                Total Balance = 1000
+            </div>
+ 
+            <!-- Close Button -->
+            <button onclick="document.getElementById('cartModal').style.display='none'"
+                class="w-full bg-gray-900 text-white rounded-xl py-3 text-sm font-bold hover:bg-orange-500 tracking-widest uppercase transition-colors">
+                Close
+            </button>
+ 
+        </div>
+    </div>
+ 
+
 
     <!-- Hero Section -->
     <section id="home" class="relative w-full" style="height: calc(100vh - 64px);">
@@ -502,6 +558,9 @@
     </div>
 
 
+
+
+    
     <!-- Footer Section -->
     <footer class="bg-gray-800 mt-24">
         <div class="border-t border-white/10"></div>
