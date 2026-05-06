@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="app.css">
+    <title>SmartShop</title>
 </head>
+
 <body>
 
     <!-- Navbar Section -->
@@ -31,8 +35,9 @@
                     </button>
                 </div>
 
-  
-                <button onclick="document.getElementById('cartModal').style.display='flex'" class="relative text-white text-xl">
+
+                <button onclick="document.getElementById('cartModal').style.display='flex'"
+                    class="relative text-white text-xl">
                     🛒
                 </button>
             </div>
@@ -40,73 +45,128 @@
     </nav>
 
     <!-- Cart Modal -->
-    <div id="cartModal" class="fixed inset-0 z-[999] items-center justify-center" style="display:none; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(6px);">
-        <div class="bg-white border border-gray-200 rounded-3xl p-8 w-full max-w-md shadow-2xl text-gray-900" style="font-family: 'Courier New', monospace;">
- 
+    <div id="cartModal" class="fixed inset-0 z-[999] items-center justify-center"
+        style="display:none; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(6px);">
+        <div class="bg-white border border-gray-200 rounded-3xl p-8 w-full max-w-md shadow-2xl text-gray-900"
+            style="font-family: 'Courier New', monospace;">
+
             <!-- Title -->
             <div class="flex justify-center mb-6">
-                <span class="border border-gray-300 px-10 py-2 rounded-xl text-lg font-bold tracking-widest uppercase text-gray-800">CART</span>
+                <span
+                    class="border border-gray-300 px-10 py-2 rounded-xl text-lg font-bold tracking-widest uppercase text-gray-800">CART</span>
             </div>
- 
+
             <!-- Balance Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Balance</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">1000</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
+                    Balance</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">1000
+                </div>
             </div>
- 
+
             <!-- Add Money Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Add Money</div>
-                <input type="number" 
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
+                    Add Money</div>
+                <input type="number"
                     class="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
-                <button class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
+                <button
+                    class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
             </div>
- 
+
             <!-- Cart Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Cart</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">-100</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
+                    Cart</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
+                    -100</div>
             </div>
- 
+
             <!-- Delivery Charge -->
             <div class="flex items-center gap-3 mb-4">
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Delevery Charge</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">-120</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
+                    Delevery Charge</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
+                    -120</div>
             </div>
- 
+
             <!-- Discount -->
             <div class="flex items-center gap-3 mb-6">
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Discount</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">50%</div>
+                <div
+                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
+                    Discount</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">50%
+                </div>
             </div>
- 
+
             <!-- Total Balance -->
-            <div class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
+            <div
+                class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
                 Total Balance = 1000
             </div>
- 
+
             <!-- Close Button -->
             <button onclick="document.getElementById('cartModal').style.display='none'"
                 class="w-full bg-gray-900 text-white rounded-xl py-3 text-sm font-bold hover:bg-orange-500 tracking-widest uppercase transition-colors">
                 Close
             </button>
- 
+
         </div>
     </div>
- 
+
 
 
     <!-- Hero Section -->
-    <section id="home" class="relative w-full" style="height: calc(100vh - 64px);">
-        <img src="images/banner.jpg" alt="SmartShop Banner" class="w-full h-full object-cover">
-        <div class="absolute inset-0 flex items-center px-24" style="background: linear-gradient(105deg, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.35) 55%, transparent 100%);">
-            <div class="max-w-lg">
-                <span class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Limited Time Offer</span>
-                <h1 class="text-white text-7xl font-bold leading-tight mb-4">Mega Sale<br>Up to 50% Off</h1>
-                <p class="text-white text-base font-light mb-8 max-w-sm opacity-75">Shop the best deals on electronics, fashion & more — all in one place.</p>
-                <a href="#products" class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now →</a>
+    <section id="home" class="relative w-full overflow-hidden" style="height: calc(100vh - 64px);">
+
+        <!-- DaisyUI Carousel -->
+        <div class="carousel w-full h-full">
+            <div id="slide1" class="carousel-item relative w-full h-full">
+                <img src="images/banner.jpg" alt="Banner 1" class="w-full h-full object-cover" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-20">
+                    <a href="#slide4" class="btn btn-circle">❮</a>
+                    <a href="#slide2" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide2" class="carousel-item relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f" alt="Banner 2"
+                    class="w-full h-full object-cover" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-20">
+                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide3" class="carousel-item relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Banner 3"
+                    class="w-full h-full object-cover" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-20">
+                    <a href="#slide2" class="btn btn-circle">❮</a>
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                </div>
             </div>
         </div>
+
+        <!-- Gradient Overlay + CTA (pointer-events-none so buttons stay clickable) -->
+        <div class="absolute inset-0 flex items-center px-24 pointer-events-none"
+            style="background: linear-gradient(105deg, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.35) 55%, transparent 100%);">
+            <div class="max-w-lg pointer-events-auto">
+                <span
+                    class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Limited
+                    Time Offer</span>
+                <h1 class="text-white text-7xl font-bold leading-tight mb-4">Mega Sale<br>Up to 50% Off</h1>
+                <p class="text-white text-base font-light mb-8 max-w-sm opacity-75">Shop the best deals on electronics,
+                    fashion & more — all in one place.</p>
+                <a href="#products"
+                    class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now →</a>
+            </div>
+        </div>
+
     </section>
 
 
@@ -117,239 +177,8 @@
             <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">What We Offer</p>
             <h2 class="text-4xl font-bold text-gray-900">Featured Products</h2>
         </div>
-
-        <!-- MEN'S -->
-        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Men's Clothing</h3>
-        <div class="grid grid-cols-4 gap-4 mb-12">
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Classic Canvas Shirt" data-category="men">
-                    <img src="images/shirt.jpg" class="w-full h-56 object-cover" alt="shirt">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Classic Canvas Shirt</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">1500 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Slim Fit Crew T-Shirt" data-category="men">
-                    <img src="images/t-shirt.jpg" class="w-full h-56 object-cover" alt="T-Shirt">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Slim Fit Crew T-Shirt</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">2200 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Casual Cotton Jacket" data-category="men">
-                    <img src="images/jacket.jpg" class="w-full h-56 object-cover" alt="Jacket">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Casual Cotton Jacket</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">3000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Classic Pant" data-category="men">
-                    <img src="images/pant.jpg" class="w-full h-56 object-cover" alt="Pant">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Classic Pant</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">1200 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div id="product-grid" class="grid grid-cols-4 gap-4 mb-12">
         </div>
-
-        <!-- WOMEN'S -->
-        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Women's Clothing</h3>
-        <div class="grid grid-cols-4 gap-4 mb-12">
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Classic Button-Down Frock" data-category="women">
-                    <img src="images/frock.jpg" class="w-full h-56 object-cover" alt="Frock">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Classic Button-Down Frock</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">3400 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Saare" data-category="women">
-                    <img src="images/saare.png" class="w-full h-56 object-cover" alt="Saare">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Saare</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">5000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Kurta" data-category="women">
-                    <img src="images/kurta.jpg" class="w-full h-56 object-cover" alt="Kurta">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Kurta</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">10000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Short Sleeve Moisture Tunic" data-category="women">
-                    <img src="images/western.jpg" class="w-full h-56 object-cover" alt="Women Tunic">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Short Sleeve Moisture Tunic</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">2000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CHILDREN'S -->
-        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Children's Clothing</h3>
-        <div class="grid grid-cols-4 gap-4 mb-12">
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Kids Printed Cotton T-Shirt & Pant" data-category="children">
-                    <img src="images/kid1.jpg" class="w-full h-56 object-cover" alt="Kids1">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Kids Printed Cotton T-Shirt & Pant</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">1500 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Kids Puffer T-Shirt" data-category="children">
-                    <img src="images/kid2.jpg" class="w-full h-56 object-cover" alt="Kids2">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Kids Puffer T-Shirt</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">1000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Girls Floral Summer Dress" data-category="children">
-                    <img src="images/kid3.jpg" class="w-full h-56 object-cover" alt="Kids3">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Girls Floral Summer Dress</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">1000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Boys Casual Jogger Pants" data-category="children">
-                    <img src="images/kid4.jpg" class="w-full h-56 object-cover" alt="Kids Pants">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Boys Casual Jogger Pants</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">2000 BDT</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ELECTRONICS -->
-        <h3 class="text-2xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">Electronics</h3>
-        <div class="grid grid-cols-4 gap-4 mb-4">
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Headphones" data-category="electronics">
-                    <img src="images/headphones.pg.jpg" class="w-full h-56 object-cover" alt="Headphones">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Headphones</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">$64</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="HP Laptop" data-category="electronics">
-                    <img src="images/laptop.jpg" class="w-full h-56 object-cover" alt="Laptop">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">HP Laptop</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">$109</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Rolex Watch" data-category="electronics">
-                    <img src="images/watch.jpg" class="w-full h-56 object-cover" alt="Watch">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Rolex Watch</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">$114</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-wrapper">
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg" data-name="Samsung Smartphone" data-category="electronics">
-                    <img src="images/smartphone.jpg" class="w-full h-56 object-cover" alt="Smartphone">
-                    <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">Samsung Smartphone</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">$999</span>
-                            <button class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
 
@@ -364,9 +193,11 @@
         <div class="grid grid-cols-4 gap-5 mb-5">
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Great products and very fast delivery! I am very happy with my purchase. Will definitely be ordering again from SmartShop!"</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Great products and very fast delivery! I am very happy
+                    with my purchase. Will definitely be ordering again from SmartShop!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/ronaldo.jpg" alt="Cristiano Ronaldo" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/ronaldo.jpg" alt="Cristiano Ronaldo"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Cristiano Ronaldo</p>
                         <p class="text-xs text-gray-400 mt-1">April 10, 2026</p>
@@ -375,9 +206,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Good quality products. The packaging was neat and delivery was on time. Will definitely buy again from SmartShop."</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Good quality products. The packaging was neat and delivery
+                    was on time. Will definitely buy again from SmartShop."</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/John Cena.jpg" alt="John Cena" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/John Cena.jpg" alt="John Cena"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">John Cena</p>
                         <p class="text-xs text-gray-400 mt-1">April 15, 2026</p>
@@ -386,9 +219,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Nice website! Very easy to use and navigate. The product quality is amazing. Highly recommended to everyone!"</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Nice website! Very easy to use and navigate. The product
+                    quality is amazing. Highly recommended to everyone!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/michael.jpg" alt="Michael Jackson" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/michael.jpg" alt="Michael Jackson"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Michael Jackson</p>
                         <p class="text-xs text-gray-400 mt-1">April 20, 2026</p>
@@ -397,9 +232,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Product was exactly as described. No complaints at all. Customer service was also very helpful and responsive."</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Product was exactly as described. No complaints at all.
+                    Customer service was also very helpful and responsive."</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/chandler.jpg" alt="Chandler Bing" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/chandler.jpg" alt="Chandler Bing"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Chandler Bing</p>
                         <p class="text-xs text-gray-400 mt-1">May 1, 2026</p>
@@ -413,9 +250,11 @@
         <div class="grid grid-cols-4 gap-5">
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Very satisfied with my purchase. Great value for money! The shipping was super fast too. 10/10 experience overall."</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Very satisfied with my purchase. Great value for money!
+                    The shipping was super fast too. 10/10 experience overall."</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/rachel.jpg" alt="Rachel Green" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/rachel.jpg" alt="Rachel Green"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Rachel Green</p>
                         <p class="text-xs text-gray-400 mt-1">May 2, 2026</p>
@@ -424,9 +263,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"I'm really impressed with SmartShop. The range of products is excellent and pricing is very competitive. Loved it!"</p>
+                <p class="text-gray-500 text-sm italic mb-5">"I'm really impressed with SmartShop. The range of products
+                    is excellent and pricing is very competitive. Loved it!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/jaime.jpg" alt="Jaime Lannister" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/jaime.jpg" alt="Jaime Lannister"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Jaime Lannister</p>
                         <p class="text-xs text-gray-400 mt-1">May 3, 2026</p>
@@ -435,9 +276,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"Say my name. SmartShop. That's right. Outstanding service, fast shipping, quality products. I always win with SmartShop."</p>
+                <p class="text-gray-500 text-sm italic mb-5">"Say my name. SmartShop. That's right. Outstanding service,
+                    fast shipping, quality products. I always win with SmartShop."</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/walter.jpg" alt="Walter White" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/walter.jpg" alt="Walter White"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Walter White</p>
                         <p class="text-xs text-gray-400 mt-1">May 4, 2026</p>
@@ -446,9 +289,11 @@
             </div>
 
             <div class="bg-white border border-gray-200 rounded-2xl p-8">
-                <p class="text-gray-500 text-sm italic mb-5">"I've shopped all around the world and SmartShop is genuinely one of the best. Fast, reliable, and such great quality!"</p>
+                <p class="text-gray-500 text-sm italic mb-5">"I've shopped all around the world and SmartShop is
+                    genuinely one of the best. Fast, reliable, and such great quality!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="images/Taylor Swift.jpg" alt="Taylor Swift" class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <img src="images/Taylor Swift.jpg" alt="Taylor Swift"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
                     <div>
                         <p class="font-semibold text-sm text-gray-900">Taylor Swift</p>
                         <p class="text-xs text-gray-400 mt-1">May 4, 2026</p>
@@ -473,11 +318,19 @@
             <div class="grid grid-cols-2 gap-12 items-center mb-16">
                 <img src="images/aboutus.jpg" class="w-full h-96 object-cover rounded-2xl" alt="About SmartShop">
                 <div>
-                    <span class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Est. 2024</span>
+                    <span
+                        class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Est.
+                        2024</span>
                     <h3 class="text-3xl font-bold text-gray-900 leading-snug mb-5">Shopping Made<br>Simple & Smart</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">SmartShop was born from a simple idea — that everyone deserves access to quality products at honest prices, delivered with care. Since 2019, we've been building a marketplace that puts customers first, every single time.</p>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8">From fashion to electronics, we curate only the best — so you don't have to spend hours searching. We're based in Chittagong, Bangladesh, and we ship across the country with speed and reliability.</p>
-                    <a href="#products" class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now →</a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">SmartShop was born from a simple idea — that
+                        everyone deserves access to quality products at honest prices, delivered with care. Since 2019,
+                        we've been building a marketplace that puts customers first, every single time.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">From fashion to electronics, we curate only
+                        the best — so you don't have to spend hours searching. We're based in Chittagong, Bangladesh,
+                        and we ship across the country with speed and reliability.</p>
+                    <a href="#products"
+                        class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now
+                        →</a>
                 </div>
             </div>
 
@@ -509,22 +362,31 @@
 
             <div class="grid grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/alvee.jpeg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Tahmid Alvee">
+                    <img src="images/alvee.jpeg"
+                        class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
+                        alt="Tahmid Alvee">
                     <p class="text-xl font-bold text-gray-900 mb-1">Tahmid Alvee</p>
                     <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & CEO</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">Visionary leader driving SmartShop's growth and strategy, ensuring every customer gets the best experience possible.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Visionary leader driving SmartShop's growth and
+                        strategy, ensuring every customer gets the best experience possible.</p>
                 </div>
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/soumen.jpg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Soumen Sen">
+                    <img src="images/soumen.jpg"
+                        class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
+                        alt="Soumen Sen">
                     <p class="text-xl font-bold text-gray-900 mb-1">Soumen Sen</p>
                     <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & COO</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">Operations expert keeping SmartShop running smoothly — from sourcing the finest products to ensuring fast, reliable delivery.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Operations expert keeping SmartShop running
+                        smoothly — from sourcing the finest products to ensuring fast, reliable delivery.</p>
                 </div>
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/tokitul.jpeg" class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5" alt="Tokitul Osmani">
+                    <img src="images/tokitul.jpeg"
+                        class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
+                        alt="Tokitul Osmani">
                     <p class="text-xl font-bold text-gray-900 mb-1">Tokitul Osmani</p>
                     <p class="text-xs font-bold tracking-widest uppercase mb-3 text-orange-500">Co-Founder & CTO</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">Tech innovator behind SmartShop's seamless platform, building the digital experience that makes shopping truly smart.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tech innovator behind SmartShop's seamless
+                        platform, building the digital experience that makes shopping truly smart.</p>
                 </div>
             </div>
         </div>
@@ -535,7 +397,8 @@
     <div id="contact" class="max-w-2xl mx-auto px-6 pt-20 text-center">
         <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Get In Touch</p>
         <h2 class="text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
-        <p class="text-gray-500 text-sm mb-10">Have a question or need help? Send us a message and we'll get back to you within 24 hours.</p>
+        <p class="text-gray-500 text-sm mb-10">Have a question or need help? Send us a message and we'll get back to you
+            within 24 hours.</p>
 
         <div class="flex justify-center gap-8 mb-10 text-xs text-gray-500">
             <span>📧 smartshop@email.com</span>
@@ -545,11 +408,15 @@
 
         <form class="bg-white border border-gray-200 rounded-2xl p-8 text-left">
             <div class="grid grid-cols-2 gap-4 mb-4">
-                <input type="text" placeholder="Your name" class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
-                <input type="email" placeholder="Your email" class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+                <input type="text" placeholder="Your name"
+                    class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+                <input type="email" placeholder="Your email"
+                    class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
             </div>
-            <textarea rows="4" placeholder="Your message..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none resize-none mb-4"></textarea>
-            <button type="submit" class="w-full text-white bg-gray-900 py-3 rounded-lg text-sm font-semibold hover:bg-orange-500">
+            <textarea rows="4" placeholder="Your message..."
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none resize-none mb-4"></textarea>
+            <button type="submit"
+                class="w-full text-white bg-gray-900 py-3 rounded-lg text-sm font-semibold hover:bg-orange-500">
                 Send Message →
             </button>
         </form>
@@ -557,8 +424,6 @@
 
 
 
-
-    
     <!-- Footer Section -->
     <footer class="bg-gray-800 mt-24">
         <div class="border-t border-white/10"></div>
@@ -567,5 +432,8 @@
         </div>
     </footer>
 
+    <script src="app.js"></script>
 </body>
+
 </html>
+<!-- >>>>>>> de30e0d233ec3d328fe880ffef36c752649a434a -->
