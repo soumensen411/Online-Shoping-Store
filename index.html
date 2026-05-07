@@ -68,10 +68,10 @@
                 <div
                     class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
                     Add Money</div>
-                <input type="number"
+                <input id="money-input" type="number"
                     class="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
-                <button
-                    class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
+                <button id="add-money"
+                    class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50" >Add</button>
             </div>
 
             <!-- Cart Row -->
@@ -81,7 +81,7 @@
                     Cart</div>
                 <div
                     class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
-                    -100</div>
+                    <span id="cart-money">00</span></div>
             </div>
 
             <!-- Delivery Charge -->
@@ -99,20 +99,26 @@
                 <div
                     class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
                     Discount</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50">50%
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50"><span id="dis-show"></span>
                 </div>
             </div>
 
-            <!-- Total Balance -->
+            <!-- Total Cost -->
             <div
                 class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
-                Total Balance = 1000
+                Total Cost = <span id="final-bal"></span>
             </div>
 
             <!-- Close Button -->
+            <button
+                id="place-order"
+                class="w-full bg-orange-500 text-white rounded-xl py-3 text-sm font-bold hover:bg-orange-900 tracking-widest uppercase transition-colors">
+                Place Order
+            </button>
             <form method="dialog">
+                
                 <button
-                    class="w-full bg-gray-900 text-white rounded-xl py-3 text-sm font-bold hover:bg-orange-500 tracking-widest uppercase transition-colors">
+                    class="mt-3 w-full bg-gray-500 text-white rounded-xl py-3 text-sm font-bold hover:bg-gray-900 tracking-widest uppercase transition-colors">
                     Close
                 </button>
             </form>
@@ -363,7 +369,7 @@
 
             <div class="grid grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/alvee.jpeg"
+                    <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/alvee.jpeg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Tahmid Alvee">
                     <p class="text-xl font-bold text-gray-900 mb-1">Tahmid Alvee</p>
@@ -372,7 +378,7 @@
                         strategy, ensuring every customer gets the best experience possible.</p>
                 </div>
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/soumen.jpg"
+                    <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/soumen.jpg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Soumen Sen">
                     <p class="text-xl font-bold text-gray-900 mb-1">Soumen Sen</p>
@@ -381,7 +387,7 @@
                         smoothly — from sourcing the finest products to ensuring fast, reliable delivery.</p>
                 </div>
                 <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <img src="images/tokitul.jpeg"
+                    <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/tokitul.jpeg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Tokitul Osmani">
                     <p class="text-xl font-bold text-gray-900 mb-1">Tokitul Osmani</p>
