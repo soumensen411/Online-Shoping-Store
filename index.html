@@ -13,10 +13,10 @@
 <body>
     <!-- Navbar Section -->
     <nav class="sticky top-0 z-50 bg-gray-900 border-b border-white/10 shadow-lg">
-        <div class="w-full px-24 h-16 flex items-center justify-between gap-6">
-            <a href="#home" class="text-white text-2xl font-bold shrink-0">🏪 SmartShop</a>
+        <div class="w-full px-4 sm:px-6 lg:px-24 h-16 flex items-center justify-between gap-4">
+            <a href="#home" class="text-white text-xl sm:text-2xl font-bold shrink-0">🏪 SmartShop</a>
 
-            <div class="flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+            <div class="hidden sm:flex gap-4 lg:gap-8 items-center absolute left-1/2 -translate-x-1/2">
                 <a href="#home" class="text-sm text-gray-300 hover:text-white">Home</a>
                 <a href="#products" class="text-sm text-gray-300 hover:text-white">Products</a>
                 <a href="#reviews" class="text-sm text-gray-300 hover:text-white">Reviews</a>
@@ -24,126 +24,103 @@
                 <a href="#contact" class="text-sm text-gray-300 hover:text-white">Contact</a>
             </div>
 
-            <div class="flex gap-4 items-center shrink-0 ml-auto">
-                <div class="flex items-center">
+            <div class="flex gap-2 sm:gap-4 items-center shrink-0 ml-auto">
+                <div class="hidden sm:flex items-center">
                     <input id="searchInput" type="text" placeholder="Search products..." onkeyup="filterProducts()"
-                        class="w-56 px-4 py-2 rounded-l-lg text-sm bg-gray-800 text-white border border-white/10 outline-none placeholder-gray-400">
+                        class="w-36 sm:w-44 lg:w-56 px-4 py-2 rounded-l-lg text-sm bg-gray-800 text-white border border-white/10 outline-none placeholder-gray-400">
                     <button onclick="filterProducts()"
                         class="px-4 py-2 bg-orange-500 hover:bg-orange-400 text-white text-sm font-medium rounded-r-lg border border-orange-500 transition-colors duration-200">
                         Search
                     </button>
                 </div>
 
-
                 <button onclick="my_modal_1.showModal()" class="relative text-white text-xl">
                     <div class="indicator" data-theme="dark">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 bg-grey-900" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span class="badge badge-sm indicator-item " id="cart-count"></span>
+                        <span class="badge badge-sm indicator-item" id="cart-count"></span>
                     </div>
-
                 </button>
             </div>
         </div>
     </nav>
 
+
+
     <!-- DaisyUI Cart Modal -->
     <dialog id="my_modal_1" class="modal">
-        <div class="modal-box bg-white border border-gray-200 rounded-3xl p-8 w-full max-w-md shadow-2xl text-gray-900"
+        <div class="modal-box bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md shadow-2xl text-gray-900"
             style="font-family: 'Courier New', monospace;">
 
-            <!-- Title -->
             <div class="flex justify-center mb-6">
                 <span
-                    class="border border-gray-300 px-10 py-2 rounded-xl text-lg font-bold tracking-widest uppercase text-gray-800">CART</span>
+                    class="border border-gray-300 px-8 sm:px-10 py-2 rounded-xl text-base sm:text-lg font-bold tracking-widest uppercase text-gray-800">CART</span>
             </div>
 
-            <!-- Balance Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
-                    Balance</div>
-                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50"><span
-                        class="total-bal"></span>
-                </div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Balance</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold bg-gray-50"><span class="total-bal"></span></div>
             </div>
 
-            <!-- Add Money Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
-                    Add Money</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Add Money</div>
                 <input id="money-input" type="number"
-                    class="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
+                    class="w-24 sm:w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
                 <button id="add-money"
-                    class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
+                    class="border border-gray-200 rounded-xl px-4 sm:px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
             </div>
 
-            <!-- Cart Row -->
             <div class="flex items-center gap-3 mb-4">
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
-                    Cart</div>
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Cart</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
                     <span id="cart-money">00</span>
                 </div>
             </div>
 
-            <!-- Delivery Charge -->
             <div class="flex items-center gap-3 mb-4">
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
-                    Delivery Charge</div>
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">
-                    120</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Delivery Charge</div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-center font-bold text-red-500 bg-gray-50">120</div>
             </div>
 
-            <!-- Discount -->
             <div class="flex items-center gap-3 mb-4">
-                <div
-                    class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">
-                    Cupon </div>
+                <div class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold tracking-wide bg-gray-50">Cupon</div>
                 <input id="cupon-input"
-                    class="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
+                    class="w-24 sm:w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-sm outline-none text-gray-900 text-center">
                 <button id="add-cupon"
-                    class="border border-gray-200 rounded-xl px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
+                    class="border border-gray-200 rounded-xl px-4 sm:px-5 py-3 text-sm font-bold hover:bg-gray-100 bg-gray-50">Add</button>
             </div>
-            <!-- Total Cost -->
-            <div
-                class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
+
+            <div class="border border-gray-300 rounded-xl px-4 py-4 text-center font-bold text-base tracking-wide mb-5 bg-orange-50 text-orange-600">
                 Total Cost = <span id="final-bal"></span>
             </div>
 
-            <!-- Close Button -->
             <button id="place-order"
                 class="w-full bg-orange-500 text-white rounded-xl py-3 text-sm font-bold hover:bg-orange-900 tracking-widest uppercase transition-colors">
                 Place Order
             </button>
             <form method="dialog">
-
                 <button
                     class="mt-3 w-full bg-gray-500 text-white rounded-xl py-3 text-sm font-bold hover:bg-gray-900 tracking-widest uppercase transition-colors">
                     Close
                 </button>
             </form>
-
         </div>
 
-        <!-- Click outside to close -->
         <form method="dialog" class="modal-backdrop">
             <button>close</button>
         </form>
     </dialog>
 
+
+
+
+
+
     <!-- Hero Section -->
     <section id="home" class="relative w-full overflow-hidden" style="height: calc(100vh - 64px);">
-
-        <!-- DaisyUI Carousel -->
         <div class="carousel w-full h-full">
             <div id="slide1" class="carousel-item relative w-full h-full">
                 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Banner 1"
@@ -171,44 +148,50 @@
             </div>
         </div>
 
-        <!-- overlay -->
-        <div class="absolute inset-0 flex items-center px-24 pointer-events-none"
+        <div class="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-24 pointer-events-none"
             style="background: linear-gradient(105deg, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.35) 55%, transparent 100%);">
-            <div class="max-w-lg pointer-events-auto">
+            <div class="max-w-xs sm:max-w-sm lg:max-w-lg pointer-events-auto">
                 <span
-                    class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Limited
+                    class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-4 sm:mb-5">Limited
                     Time Offer</span>
-                <h1 class="text-white text-7xl font-bold leading-tight mb-4">Mega Sale<br>Up to 50% Off</h1>
-                <p class="text-white text-base font-light mb-8 max-w-sm opacity-75">Shop the best deals on electronics,
+                <h1 class="text-white text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-4">Mega Sale<br>Up to 50% Off</h1>
+                <p class="text-white text-sm sm:text-base font-light mb-6 sm:mb-8 opacity-75">Shop the best deals on electronics,
                     fashion & more — all in one place.</p>
                 <a href="#products"
-                    class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now →</a>
+                    class="inline-block text-white bg-orange-500 px-5 sm:px-7 py-2 sm:py-3 rounded text-sm font-semibold">Shop Now →</a>
             </div>
         </div>
-
     </section>
 
+
+
+    
+
     <!-- Product Section -->
-    <div id="products" class="w-full px-6 pt-20">
-        <div class="mb-9 text-center">
+    <div id="products" class="w-full px-4 sm:px-6 pt-12 sm:pt-20">
+        <div class="mb-8 sm:mb-9 text-center">
             <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">What We Offer</p>
-            <h2 class="text-4xl font-bold text-gray-900">Featured Products</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Featured Products</h2>
         </div>
-        <div id="product-grid" class="grid grid-cols-4 gap-4 mb-12">
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
         </div>
     </div>
 
+
+
+
+
     <!-- Reviews Section -->
-    <div id="reviews" class="w-full px-6 pt-20">
-        <div class="mb-10 text-center">
+    <div id="reviews" class="w-full px-4 sm:px-6 pt-12 sm:pt-20">
+        <div class="mb-8 sm:mb-10 text-center">
             <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Testimonials</p>
-            <h2 class="text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">What Our Customers Say</h2>
         </div>
 
         <!-- Row 1 -->
-        <div class="grid grid-cols-4 gap-5 mb-5">
-
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-4 sm:mb-5">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Great products and very fast delivery! I am very happy
                     with my purchase. Will definitely be ordering again from SmartShop!"</p>
                 <div class="flex items-center gap-3">
@@ -221,7 +204,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★☆</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Good quality products. The packaging was neat and delivery
                     was on time. Will definitely buy again from SmartShop."</p>
                 <div class="flex items-center gap-3">
@@ -234,7 +218,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Nice website! Very easy to use and navigate. The product
                     quality is amazing. Highly recommended to everyone!"</p>
                 <div class="flex items-center gap-3">
@@ -247,7 +232,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Product was exactly as described. No complaints at all.
                     Customer service was also very helpful and responsive."</p>
                 <div class="flex items-center gap-3">
@@ -259,13 +245,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Row 2 -->
-        <div class="grid grid-cols-4 gap-5">
-
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★☆</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Very satisfied with my purchase. Great value for money!
                     The shipping was super fast too. 10/10 experience overall."</p>
                 <div class="flex items-center gap-3">
@@ -278,7 +263,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"I'm really impressed with SmartShop. The range of products
                     is excellent and pricing is very competitive. Loved it!"</p>
                 <div class="flex items-center gap-3">
@@ -291,7 +277,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"Say my name. SmartShop. That's right. Outstanding service,
                     fast shipping, quality products. I always win with SmartShop."</p>
                 <div class="flex items-center gap-3">
@@ -304,7 +291,8 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">★★★★★</p>
                 <p class="text-gray-500 text-sm italic mb-5">"I've shopped all around the world and SmartShop is
                     genuinely one of the best. Fast, reliable, and such great quality!"</p>
                 <div class="flex items-center gap-3">
@@ -316,55 +304,56 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 
+
+
+
+
     <!-- About Us Section -->
-    <div id="about" class="w-full px-6 pt-20 pb-20 bg-stone-50">
+    <div id="about" class="w-full px-4 sm:px-6 pt-12 sm:pt-20 pb-12 sm:pb-20 bg-stone-50">
         <div class="max-w-screen-xl mx-auto">
 
-            <div class="mb-14 text-center">
+            <div class="mb-10 sm:mb-14 text-center">
                 <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Who We Are</p>
-                <h2 class="text-4xl font-bold text-gray-900">About SmartShop</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">About SmartShop</h2>
             </div>
 
-            <div class="grid grid-cols-2 gap-12 items-center mb-16">
-                <img src="images/aboutus.jpg" class="w-full h-96 object-cover rounded-2xl" alt="About SmartShop">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
+                <img src="images/aboutus.jpg" class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-2xl" alt="About SmartShop">
                 <div>
                     <span
-                        class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-5">Est.
+                        class="inline-block text-xs font-bold tracking-widest uppercase border border-orange-500 text-orange-500 px-3 py-1 rounded mb-4 sm:mb-5">Est.
                         2024</span>
-                    <h3 class="text-3xl font-bold text-gray-900 leading-snug mb-5">Shopping Made<br>Simple & Smart</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-snug mb-4 sm:mb-5">Shopping Made<br>Simple & Smart</h3>
                     <p class="text-gray-500 text-sm leading-relaxed mb-4">SmartShop was born from a simple idea — that
-                        everyone deserves access to quality products at honest prices, delivered with care. Since 2019,
+                        everyone deserves access to quality products at honest prices, delivered with care. Since 2024,
                         we've been building a marketplace that puts customers first, every single time.</p>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8">From fashion to electronics, we curate only
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 sm:mb-8">From fashion to electronics, we curate only
                         the best — so you don't have to spend hours searching. We're based in Chittagong, Bangladesh,
                         and we ship across the country with speed and reliability.</p>
                     <a href="#products"
-                        class="inline-block text-white bg-orange-500 px-7 py-3 rounded text-sm font-semibold">Shop Now
-                        →</a>
+                        class="inline-block text-white bg-orange-500 px-6 sm:px-7 py-2 sm:py-3 rounded text-sm font-semibold">Shop Now →</a>
                 </div>
             </div>
 
             <!-- Stats Row -->
-            <div class="grid grid-cols-4 gap-6 mb-16">
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <p class="text-4xl font-bold mb-2 text-orange-500">50K+</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
+                    <p class="text-3xl sm:text-4xl font-bold mb-2 text-orange-500">50K+</p>
                     <p class="text-sm font-medium text-gray-500">Happy Customers</p>
                 </div>
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <p class="text-4xl font-bold mb-2 text-orange-500">1,200+</p>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
+                    <p class="text-3xl sm:text-4xl font-bold mb-2 text-orange-500">1,200+</p>
                     <p class="text-sm font-medium text-gray-500">Products Listed</p>
                 </div>
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <p class="text-4xl font-bold mb-2 text-orange-500">3 Yrs</p>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
+                    <p class="text-3xl sm:text-4xl font-bold mb-2 text-orange-500">3 Yrs</p>
                     <p class="text-sm font-medium text-gray-500">In Business</p>
                 </div>
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
-                    <p class="text-4xl font-bold mb-2 text-orange-500">4.9★</p>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
+                    <p class="text-3xl sm:text-4xl font-bold mb-2 text-orange-500">4.9★</p>
                     <p class="text-sm font-medium text-gray-500">Average Rating</p>
                 </div>
             </div>
@@ -372,11 +361,11 @@
             <!-- Meet the Owners -->
             <div class="mb-4 text-center">
                 <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">The Team</p>
-                <h3 class="text-3xl font-bold text-gray-900 mb-10">Meet the Owners</h3>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-10">Meet the Owners</h3>
             </div>
 
-            <div class="grid grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
                     <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/alvee.jpeg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Tahmid Alvee">
@@ -385,7 +374,7 @@
                     <p class="text-gray-500 text-sm leading-relaxed">Visionary leader driving SmartShop's growth and
                         strategy, ensuring every customer gets the best experience possible.</p>
                 </div>
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
                     <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/soumen.jpg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Soumen Sen">
@@ -394,7 +383,7 @@
                     <p class="text-gray-500 text-sm leading-relaxed">Operations expert keeping SmartShop running
                         smoothly — from sourcing the finest products to ensuring fast, reliable delivery.</p>
                 </div>
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg">
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg">
                     <img src="https://ik.imagekit.io/xrrsiofbq/Online%20shoping%20store/images/tokitul.jpeg"
                         class="w-24 h-24 rounded-full object-cover object-top border-4 border-gray-200 mx-auto mb-5"
                         alt="Tokitul Osmani">
@@ -407,21 +396,24 @@
         </div>
     </div>
 
+
+
+
     <!-- Contact Section -->
-    <div id="contact" class="max-w-2xl mx-auto px-6 pt-20 text-center">
+    <div id="contact" class="max-w-xl sm:max-w-2xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 text-center">
         <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Get In Touch</p>
-        <h2 class="text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
-        <p class="text-gray-500 text-sm mb-10">Have a question or need help? Send us a message and we'll get back to you
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
+        <p class="text-gray-500 text-sm mb-8 sm:mb-10">Have a question or need help? Send us a message and we'll get back to you
             within 24 hours.</p>
 
-        <div class="flex justify-center gap-8 mb-10 text-xs text-gray-500">
+        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-8 mb-8 sm:mb-10 text-xs text-gray-500">
             <span>📧 smartshop@email.com</span>
             <span>📞 +880 1705192734</span>
             <span>📍 Chittagong, Bangladesh</span>
         </div>
 
-        <form class="bg-white border border-gray-200 rounded-2xl p-8 text-left">
-            <div class="grid grid-cols-2 gap-4 mb-4">
+        <form class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <input type="text" placeholder="Your name"
                     class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
                 <input type="email" placeholder="Your email"
@@ -436,10 +428,14 @@
         </form>
     </div>
 
+
+
+
+
     <!-- Footer Section -->
-    <footer class="bg-gray-800 mt-24">
+    <footer class="bg-gray-800 mt-16 sm:mt-24">
         <div class="border-t border-white/10"></div>
-        <div class="max-w-screen-xl mx-auto px-6 py-5 flex justify-center items-center">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 py-5 flex justify-center items-center">
             <p class="text-gray-500 text-xs">© 2026 SmartShop. All rights reserved.</p>
         </div>
     </footer>
