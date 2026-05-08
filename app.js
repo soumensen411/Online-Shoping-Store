@@ -44,7 +44,7 @@ let add_cupon_btn = document.getElementById("add-cupon");
 let cartCount = document.getElementById("cart-count");
 
 total_bal.innerHTML = balance;
-final_bal.innerHTML = balance;
+final_bal.innerHTML = `00`;
 
 function addToCart(id, price) {
   let btn = document.getElementById("btn-" + id);
