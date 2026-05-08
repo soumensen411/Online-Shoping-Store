@@ -25,7 +25,38 @@ function fetch_product() {
       });
     });
 }
-fetch_product();
+// fetch_product();
+
+//  this is for fetch product from products.json file
+function localFetch() {
+  fetch("products.json")
+    .then((response) =>response.json())
+    .then((data) => {
+      // console.log(data)
+      allProducts = data.products; // Store products for search
+      const container = document.getElementById("product-grid");
+      data.products.forEach((product) => {
+        const card = document.createElement("div");
+        card.classList.add("product-card-wrapper");
+        card.innerHTML = ` 
+                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <!-- <p>${product.id}</p> -->
+                    <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
+                    <div class="p-5">
+                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-gray-900">$${product.price}</span>
+                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        container.appendChild(card);
+      });
+    });
+}
+localFetch()
+
 
 //  AI Implemented code
 function filterProducts() {
@@ -206,6 +237,8 @@ placeOrder.addEventListener("click", function () {
   alert("Order placed successfully! Thank you for shopping!");
 });
 
+
+
 // review fectch from local reviews.json file
 function fetchReview() {
   fetch("reviews.json")
@@ -233,4 +266,4 @@ function fetchReview() {
       });
     });
 }
-fetchReview()
+fetchReview();
