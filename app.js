@@ -29,9 +29,11 @@ fetch_product();
 
 //  AI Implemented code
 function filterProducts() {
-  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const searchInput = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
   const container = document.getElementById("product-grid");
-  
+
   if (searchInput === "") {
     container.innerHTML = "";
     allProducts.forEach((product) => {
@@ -53,7 +55,7 @@ function filterProducts() {
     });
     return;
   }
-  
+
   container.innerHTML = "";
   allProducts.forEach((product) => {
     if (product.title.toLowerCase().includes(searchInput)) {
@@ -203,3 +205,32 @@ placeOrder.addEventListener("click", function () {
   calculation();
   alert("Order placed successfully! Thank you for shopping!");
 });
+
+// review fectch from local reviews.json file
+function fetchReview() {
+  fetch("reviews.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.getElementById("reviews");
+
+      data.reviews.forEach((review) => {
+        const card = document.createElement("div");
+        card.classList.add("review-card-wreaper");
+        card.innerHTML = `
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
+                <p class="text-yellow-400 text-sm mb-4">${review.rating}</p>
+                <p class="text-gray-500 text-sm italic mb-5">${review.review}</p>
+                <div class="flex items-center gap-3">
+                    <img src="${review.image}" alt="Cristiano Ronaldo"
+                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-900">${review.name}</p>
+                        <p class="text-xs text-gray-400 mt-1">${review.date}</p>
+                    </div>
+                </div>
+`;
+        container.appendChild(card);
+      });
+    });
+}
+fetchReview()
