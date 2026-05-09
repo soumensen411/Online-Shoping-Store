@@ -1,6 +1,6 @@
 # 🏪 SmartShop
 
-A modern, responsive e-commerce frontend built with **HTML**, **Tailwind CSS**, **DaisyUI**, and **Vanilla JavaScript**. SmartShop features a full product listing, shopping cart with balance management, coupon support, customer reviews, and a contact form.
+A modern, responsive e-commerce frontend built with **HTML**, **Tailwind CSS**, **DaisyUI**, and **VJavaScript**. SmartShop features a full product listing, shopping cart with balance management, coupon support, customer reviews, and a contact form.
 
 ---
 
@@ -42,14 +42,7 @@ Since the app uses `fetch()` to load local JSON files, it must be served over HT
 ### Option 1 — VS Code Live Server
 Install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**.
 
-### Option 2 — Python HTTP Server
-```bash
-cd smartshop
-python -m http.server 5500
-```
-Then open [http://localhost:5500](http://localhost:5500) in your browser.
-
-### Option 3 — Node.js
+### Option 2 — Node.js
 ```bash
 npx serve .
 ```
@@ -87,7 +80,7 @@ Each review entry contains the customer's `name`, `image` URL, `rating` (as a st
 | HTML5 | Page structure |
 | Tailwind CSS (CDN) | Utility-first styling |
 | DaisyUI v5 (CDN) | Modal, carousel, badge components |
-| Vanilla JavaScript | Cart logic, fetch, DOM manipulation |
+| JavaScript | Cart logic, fetch, DOM manipulation |
 | Unsplash / ImageKit | Product and team images |
 
 ---
