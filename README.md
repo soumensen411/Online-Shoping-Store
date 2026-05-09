@@ -1,6 +1,6 @@
 # 🏪 SmartShop
 
-A modern, responsive e-commerce frontend built with **HTML**, **Tailwind CSS**, **DaisyUI**, and **VJavaScript**. SmartShop features a full product listing, shopping cart with balance management, coupon support, customer reviews, and a contact form.
+A modern, responsive e-commerce frontend built with **HTML**, **Tailwind CSS**, **DaisyUI**, and **JavaScript**. SmartShop features a full product listing, shopping cart with balance management, coupon support, customer reviews, and a contact form.
 
 ---
 
