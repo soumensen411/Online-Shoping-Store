@@ -35,19 +35,7 @@ smartshop/
 
 ---
 
-## 🚀 Getting Started
 
-Since the app uses `fetch()` to load local JSON files, it must be served over HTTP (not opened as a plain file).
-
-### Option 1 — VS Code Live Server
-Install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**.
-
-### Option 2 — Node.js
-```bash
-npx serve .
-```
-
----
 
 ## 🛒 Cart Logic
 
