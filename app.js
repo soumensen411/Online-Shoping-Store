@@ -13,7 +13,8 @@ function fetch_product() {
                 <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                    <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                    
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
@@ -43,7 +44,8 @@ function localFetch() {
                 <!-- <p>${product.id}</p> -->
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class=" font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-lg text-yellow-400 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
