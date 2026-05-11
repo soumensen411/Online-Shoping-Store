@@ -57,6 +57,11 @@ function localFetch() {
 }
 localFetch()
 
+function goToProducts() {
+  document.getElementById("products").scrollIntoView({
+    behavior: "smooth"
+  });
+}
 
 //  AI Implemented code
 function filterProducts() {
@@ -108,6 +113,53 @@ function filterProducts() {
     }
   });
 }
+
+//  fetch product 
+function fetchReview() {
+  fetch("reviews.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.getElementById("reviews");
+
+      data.reviews.forEach((review) => {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+
+        item.innerHTML = `
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 w-80">
+            
+            <p class="text-yellow-400 text-sm mb-2">
+              ${review.rating}
+            </p>
+
+            <p class="text-gray-500 text-sm italic mb-4">
+              "${review.review}"
+            </p>
+
+            <div class="flex items-center gap-3">
+              <img src="${review.image}" 
+                   class="w-10 h-10 rounded-full object-cover border" />
+
+              <div>
+                <p class="font-semibold text-sm text-gray-900">
+                  ${review.name}
+                </p>
+                <p class="text-xs text-gray-400">
+                  ${review.date}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        `;
+
+        container.appendChild(item);
+      });
+    });
+}
+fetchReview()
+
+
 
 let balance = 1000;
 let dele_charge = 120;
@@ -237,33 +289,14 @@ placeOrder.addEventListener("click", function () {
   alert("Order placed successfully! Thank you for shopping!");
 });
 
+let currentSlide = 1;
+const totalSlides = 3; 
 
+function autoSlideHero() {
+  currentSlide++;
 
-// review fectch from local reviews.json file
-function fetchReview() {
-  fetch("reviews.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const container = document.getElementById("reviews");
-
-      data.reviews.forEach((review) => {
-        const card = document.createElement("div");
-        card.classList.add("review-card-wreaper");
-        card.innerHTML = `
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
-                <p class="text-yellow-400 text-sm mb-4">${review.rating}</p>
-                <p class="text-gray-500 text-sm italic mb-5">${review.review}</p>
-                <div class="flex items-center gap-3">
-                    <img src="${review.image}" alt="Cristiano Ronaldo"
-                        class="w-11 h-11 rounded-full object-cover object-top border-2 border-gray-200">
-                    <div>
-                        <p class="font-semibold text-sm text-gray-900">${review.name}</p>
-                        <p class="text-xs text-gray-400 mt-1">${review.date}</p>
-                    </div>
-                </div>
-`;
-        container.appendChild(card);
-      });
-    });
+  if (currentSlide > totalSlides) {
+    currentSlide = 1;
+  }
 }
-fetchReview();
+setInterval(autoSlideHero, 4000);
