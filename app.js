@@ -1,7 +1,10 @@
+let allProducts = [];
+
 function fetch_product() {
   fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((data) => {
+      allProducts = data; // Store products for search
       const container = document.getElementById("product-grid");
       data.forEach((product) => {
         card = document.createElement("div");
@@ -10,7 +13,8 @@ function fetch_product() {
                 <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
-                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                    <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                    
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
@@ -22,7 +26,142 @@ function fetch_product() {
       });
     });
 }
-fetch_product();
+// fetch_product();
+
+//  this is for fetch product from products.json file
+function localFetch() {
+  fetch("products.json")
+    .then((response) =>response.json())
+    .then((data) => {
+      // console.log(data)
+      allProducts = data.products; // Store products for search
+      const container = document.getElementById("product-grid");
+      data.products.forEach((product) => {
+        const card = document.createElement("div");
+        card.classList.add("product-card-wrapper");
+        card.innerHTML = ` 
+                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <!-- <p>${product.id}</p> -->
+                    <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
+                    <div class="p-5">
+                        <p class=" font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-lg text-yellow-400 mb-2">${product.rating}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-gray-900">$${product.price}</span>
+                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        container.appendChild(card);
+      });
+    });
+}
+localFetch()
+
+function goToProducts() {
+  document.getElementById("products").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+//  AI Implemented code
+function filterProducts() {
+  const searchInput = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
+  const container = document.getElementById("product-grid");
+
+  if (searchInput === "") {
+    container.innerHTML = "";
+    allProducts.forEach((product) => {
+      card = document.createElement("div");
+      card.classList.add("product-card-wrapper");
+      card.innerHTML = ` 
+                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
+                    <div class="p-5">
+                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-gray-900">$${product.price}</span>
+                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+      container.appendChild(card);
+    });
+    return;
+  }
+
+  container.innerHTML = "";
+  allProducts.forEach((product) => {
+    if (product.title.toLowerCase().includes(searchInput)) {
+      card = document.createElement("div");
+      card.classList.add("product-card-wrapper");
+      card.innerHTML = ` 
+                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
+                    <div class="p-5">
+                        <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-gray-900">$${product.price}</span>
+                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+      container.appendChild(card);
+    }
+  });
+}
+
+//  fetch product 
+function fetchReview() {
+  fetch("reviews.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.getElementById("reviews");
+
+      data.reviews.forEach((review) => {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+
+        item.innerHTML = `
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 w-80">
+            
+            <p class="text-yellow-400 text-sm mb-2">
+              ${review.rating}
+            </p>
+
+            <p class="text-gray-500 text-sm italic mb-4">
+              "${review.review}"
+            </p>
+
+            <div class="flex items-center gap-3">
+              <img src="${review.image}" 
+                   class="w-10 h-10 rounded-full object-cover border" />
+
+              <div>
+                <p class="font-semibold text-sm text-gray-900">
+                  ${review.name}
+                </p>
+                <p class="text-xs text-gray-400">
+                  ${review.date}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        `;
+
+        container.appendChild(item);
+      });
+    });
+}
+fetchReview()
+
+
 
 let balance = 1000;
 let dele_charge = 120;
@@ -44,7 +183,7 @@ let add_cupon_btn = document.getElementById("add-cupon");
 let cartCount = document.getElementById("cart-count");
 
 total_bal.innerHTML = balance;
-final_bal.innerHTML = balance;
+final_bal.innerHTML = `00`;
 
 function addToCart(id, price) {
   let btn = document.getElementById("btn-" + id);
@@ -150,4 +289,26 @@ placeOrder.addEventListener("click", function () {
 
   calculation();
   alert("Order placed successfully! Thank you for shopping!");
+});
+
+
+
+// ── Auto Carousel ──
+let current = 0;
+const total = 3;
+const track = document.getElementById("carouselTrack");
+
+setInterval(function() {
+  current = (current + 1) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+}, 4000);
+
+document.getElementById("carouselPrev").addEventListener("click", function() {
+  current = (current - 1 + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+});
+
+document.getElementById("carouselNext").addEventListener("click", function() {
+  current = (current + 1) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
 });
