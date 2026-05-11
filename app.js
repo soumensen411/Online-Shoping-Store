@@ -289,14 +289,24 @@ placeOrder.addEventListener("click", function () {
   alert("Order placed successfully! Thank you for shopping!");
 });
 
-let currentSlide = 1;
-const totalSlides = 3; 
 
-function autoSlideHero() {
-  currentSlide++;
 
-  if (currentSlide > totalSlides) {
-    currentSlide = 1;
-  }
-}
-setInterval(autoSlideHero, 4000);
+// ── Auto Carousel ──
+let current = 0;
+const total = 3;
+const track = document.getElementById("carouselTrack");
+
+setInterval(function() {
+  current = (current + 1) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+}, 4000);
+
+document.getElementById("carouselPrev").addEventListener("click", function() {
+  current = (current - 1 + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+});
+
+document.getElementById("carouselNext").addEventListener("click", function() {
+  current = (current + 1) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+});
