@@ -1,33 +1,5 @@
 let allProducts = [];
 
-function fetch_product() {
-  fetch("https://fakestoreapi.com/products")
-    .then((response) => response.json())
-    .then((data) => {
-      allProducts = data; // Store products for search
-      const container = document.getElementById("product-grid");
-      data.forEach((product) => {
-        card = document.createElement("div");
-        card.classList.add("product-card-wrapper");
-        card.innerHTML = ` 
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
-                    <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
-                    <div class="p-5">
-                    <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
-                    
-                        <div class="flex justify-between items-center">
-                            <span class="text-base font-bold text-gray-900">$${product.price}</span>
-                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        container.appendChild(card);
-      });
-    });
-}
-// fetch_product();
-
 //  this is for fetch product from products.json file
 function localFetch() {
   fetch("products.json")
@@ -40,15 +12,15 @@ function localFetch() {
         const card = document.createElement("div");
         card.classList.add("product-card-wrapper");
         card.innerHTML = ` 
-                <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg">
+                <div class="product-card bg-white rounded-2xl border border-gray-300 overflow-hidden transform transition duration-300 ease-in-out hover:shadow-lg">
                 <!-- <p>${product.id}</p> -->
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
                         <p class=" font-medium text-gray-900 mb-3">${product.title}</p>
-                        <p class="text-lg text-yellow-400 mb-2">${product.rating}</p>
+                        <p class="text-xl text-yellow-300 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
-                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
+                            <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold transform transition duration-300 ease-in-out hover:bg-gray-900">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -65,13 +37,10 @@ function goToProducts() {
   });
 }
 
-//  AI Implemented code
+//  search functinality 
 function filterProducts() {
-  const searchInput = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
   const container = document.getElementById("product-grid");
-
   if (searchInput === "") {
     container.innerHTML = "";
     allProducts.forEach((product) => {
@@ -82,6 +51,7 @@ function filterProducts() {
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
                         <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-xl text-yellow-300 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
@@ -104,6 +74,7 @@ function filterProducts() {
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
                         <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-xl text-yellow-300 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
@@ -290,8 +261,6 @@ placeOrder.addEventListener("click", function () {
   calculation();
   alert("Order placed successfully! Thank you for shopping!");
 });
-
-
 
 // ── Auto Carousel ──
 let current = 0;
