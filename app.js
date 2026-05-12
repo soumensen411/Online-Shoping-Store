@@ -37,13 +37,10 @@ function goToProducts() {
   });
 }
 
-//  AI Implemented code
+//  search functinality 
 function filterProducts() {
-  const searchInput = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
   const container = document.getElementById("product-grid");
-
   if (searchInput === "") {
     container.innerHTML = "";
     allProducts.forEach((product) => {
@@ -54,6 +51,7 @@ function filterProducts() {
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
                         <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-xl text-yellow-300 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
@@ -76,6 +74,7 @@ function filterProducts() {
                     <img src="${product.image}" class="mx-auto h-56 object-contain p-4" alt="shirt">
                     <div class="p-5">
                         <p class="text-sm font-medium text-gray-900 mb-3">${product.title}</p>
+                        <p class="text-xl text-yellow-300 mb-2">${product.rating}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-base font-bold text-gray-900">$${product.price}</span>
                             <button id='btn-${product.id}' onclick="addToCart(${product.id}, ${product.price})" class="text-white bg-orange-500 rounded-lg px-4 py-2 text-xs font-semibold hover:bg-gray-900">Add To Cart</button>
