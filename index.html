@@ -288,38 +288,78 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <div id="contact" class="max-w-xl sm:max-w-2xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 text-center">
-        <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Get In Touch</p>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
-        <p class="text-gray-500 text-sm mb-8 sm:mb-10">Have a question or need help? Send us a message and we'll get
-            back to you
-            within 24 hours.</p>
-
-        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-8 mb-8 sm:mb-10 text-xs text-gray-500">
-            <span>📧 smartshop@email.com</span>
-            <span>📞 +880 1705192734</span>
-            <span>📍 Chittagong, Bangladesh</span>
+    <!-- DaisyUI FAQ Section  -->
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-12">
+        <div class="text-center mb-8 sm:mb-10">
+            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Frequently Asked Questions</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Common Questions</h2>
         </div>
+        <div class="flex flex-col gap-3">
+            <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
+                <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                    How long does delivery take?
+                    <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We deliver within 3–5 business days across Bangladesh. Express delivery options are also available at checkout.</p>
+            </details>
+            <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
+                <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                    How do I use a coupon code?
+                    <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Open the cart, enter your coupon code in the Coupon field and click Add. Try <strong class="text-black-500">SMART10</strong> for 10% off your order!</p>
+            </details>
+            <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
+                <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                    Can I return a product?
+                    <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Yes, we offer a 7-day return policy on all eligible items. Contact us within 7 days of delivery to initiate a return.</p>
+            </details>
+            <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
+                <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                    What payment methods do you accept?
+                    <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We accept bKash, Nagad, Rocket, and cash on delivery across all areas of Bangladesh.</p>
+            </details>
+        </div>
+    </div>
 
-        <form class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 text-left">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <input type="text" placeholder="Your name"
-                    class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
-                <input type="email" placeholder="Your email"
-                    class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+    <!-- Contact Section -->
+    <div class="w-full bg-stone-50 pb-12 sm:pb-20">
+        <div id="contact" class="max-w-xl sm:max-w-2xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 text-center">
+            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Get In Touch</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Contact Us</h2>
+            <p class="text-gray-500 text-sm mb-8 sm:mb-10">Have a question or need help? Send us a message and we'll get
+                back to you
+                within 24 hours.</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-8 mb-8 sm:mb-10 text-xs text-gray-500">
+                <span>📧 smartshop@email.com</span>
+                <span>📞 +880 1705192734</span>
+                <span>📍 Chittagong, Bangladesh</span>
             </div>
-            <textarea rows="4" placeholder="Your message..."
-                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none resize-none mb-4"></textarea>
-            <button type="submit"
-                class="w-full text-white bg-gray-900 py-3 rounded-lg text-sm font-semibold hover:bg-orange-500">
-                Send Message →
-            </button>
-        </form>
+
+            <form class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 text-left">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Your name"
+                        class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+                    <input type="email" placeholder="Your email"
+                        class="border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none">
+                </div>
+                <textarea rows="4" placeholder="Your message..."
+                    class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm bg-stone-50 text-gray-900 outline-none resize-none mb-4"></textarea>
+                <button type="submit"
+                    class="w-full text-white bg-gray-900 py-3 rounded-lg text-sm font-semibold hover:bg-orange-500">
+                    Send Message →
+                </button>
+            </form>
+        </div>
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-800 mt-16 sm:mt-24">
+    <footer class="bg-gray-800">
         <div class="border-t border-white/10"></div>
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 py-5 flex justify-center items-center">
             <p class="text-gray-500 text-xs">© 2026 SmartShop. All rights reserved.</p>
