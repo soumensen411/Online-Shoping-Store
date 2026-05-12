@@ -2,7 +2,7 @@ let allProducts = [];
 
 //  this is for fetch product from products.json file
 function localFetch() {
-  fetch("products.json")
+  fetch("./data/products.json")
     .then((response) =>response.json())
     .then((data) => {
       // console.log(data)
@@ -89,7 +89,7 @@ function filterProducts() {
 
 //  fetch product 
 function fetchReview() {
-  fetch("reviews.json")
+  fetch("./data/reviews.json")
     .then((response) => response.json())
     .then((data) => {
       const container = document.getElementById("reviews");
@@ -280,4 +280,22 @@ document.getElementById("carouselPrev").addEventListener("click", function() {
 document.getElementById("carouselNext").addEventListener("click", function() {
   current = (current + 1) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
+});
+
+// Back to Top Button 
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 300) {
+    backToTopBtn.classList.remove("hidden");
+  } else {
+    backToTopBtn.classList.add("hidden");
+  }
+});
+
+backToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
