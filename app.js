@@ -3,7 +3,7 @@ let allProducts = [];
 //  this is for fetch product from products.json file
 function localFetch() {
   fetch("./data/products.json")
-    .then((response) =>response.json())
+    .then((response) => response.json())
     .then((data) => {
       // console.log(data)
       allProducts = data.products; // Store products for search
@@ -29,17 +29,19 @@ function localFetch() {
       });
     });
 }
-localFetch()
+localFetch();
 
 function goToProducts() {
   document.getElementById("products").scrollIntoView({
-    behavior: "smooth"
+    behavior: "smooth",
   });
 }
 
-//  search functinality 
+//  search functinality
 function filterProducts() {
-  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const searchInput = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
   const container = document.getElementById("product-grid");
   if (searchInput === "") {
     container.innerHTML = "";
@@ -87,7 +89,7 @@ function filterProducts() {
   });
 }
 
-//  fetch product 
+//  fetch review
 function fetchReview() {
   fetch("./data/reviews.json")
     .then((response) => response.json())
@@ -99,7 +101,7 @@ function fetchReview() {
         item.classList.add("carousel-item");
 
         item.innerHTML = `
-          <div class="bg-white border border-gray-200 rounded-2xl p-6 w-80">
+          <div class="bg-white border border-gray-300 rounded-2xl p-6 w-80">
             
             <p class="text-yellow-400 text-sm mb-2">
               ${review.rating}
@@ -128,11 +130,39 @@ function fetchReview() {
 
         container.appendChild(item);
       });
+      autoSlide();
     });
 }
-fetchReview()
+fetchReview();
 
-
+const container = document.getElementById("reviews");
+// nextx btn
+function nextReview() {
+  container.scrollBy({
+    left: 320,
+    behavior: "smooth",
+  });
+}
+// previous btn
+function prevReview() {
+  container.scrollBy({
+    left: -320,
+    behavior: "smooth",
+  });
+}
+// autp play slide
+function autoSlide() {
+  setInterval(() => {
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      container.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      nextReview();
+    }
+  }, 5000);
+}
 
 let balance = 1000;
 let dele_charge = 120;
@@ -254,7 +284,9 @@ placeOrder.addEventListener("click", function () {
   }
 
   initialcart = 0;
-  cart_price.innerText = "0";
+  total_cart = 0;
+  cart_price.innerText = "00";
+  cartCount.innerHTML = "0"
   isdiscount = false;
   cupon_input.value = "";
 
@@ -267,25 +299,25 @@ let current = 0;
 const total = 3;
 const track = document.getElementById("carouselTrack");
 
-setInterval(function() {
+setInterval(function () {
   current = (current + 1) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
 }, 4000);
 
-document.getElementById("carouselPrev").addEventListener("click", function() {
+document.getElementById("carouselPrev").addEventListener("click", function () {
   current = (current - 1 + total) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
 });
 
-document.getElementById("carouselNext").addEventListener("click", function() {
+document.getElementById("carouselNext").addEventListener("click", function () {
   current = (current + 1) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
 });
 
-// Back to Top Button 
+// Back to Top Button
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   if (window.pageYOffset > 300) {
     backToTopBtn.classList.remove("hidden");
   } else {
@@ -293,9 +325,9 @@ window.addEventListener("scroll", function() {
   }
 });
 
-backToTopBtn.addEventListener("click", function() {
+backToTopBtn.addEventListener("click", function () {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });

@@ -190,13 +190,33 @@
         </div>
     </div>
 
+
     <!-- Reviews Section -->
-    <div class="w-full px-4 sm:px-6 pt-12 sm:pt-20">
+    <div class="w-full px-4 sm:px-48 pt-12 sm:pt-20">
+
         <div class="mb-8 sm:mb-10 text-center">
-            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">Testimonials</p>
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+            <p class="text-xs font-bold tracking-widest uppercase mb-2 text-orange-500">
+                Testimonials
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+                What Our Customers Say
+            </h2>
         </div>
-        <div id="reviews" class="carousel carousel-end rounded-box w-full gap-4 p-4"></div>
+
+        <!-- CAROUSEL -->
+        <div id="reviews" class="carousel carousel-end w-full gap-4 p-4 overflow-x-auto scroll-smooth">
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex justify-center gap-4 mt-4">
+            <button onclick="prevReview()" class="px-4 py-2 bg-gray-200 rounded">
+                <
+            </button>
+            <button onclick="nextReview()" class="px-4 py-2 bg-gray-200 rounded">
+                >
+            </button>
+        </div>
+
     </div>
 
     <!-- About Us Section -->
@@ -300,28 +320,33 @@
                     How long does delivery take?
                     <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We deliver within 3–5 business days across Bangladesh. Express delivery options are also available at checkout.</p>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We deliver within 3–5 business days across
+                    Bangladesh. Express delivery options are also available at checkout.</p>
             </details>
             <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
                 <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
                     How do I use a coupon code?
                     <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Open the cart, enter your coupon code in the Coupon field and click Add. Try <strong class="text-black-500">SMART10</strong> for 10% off your order!</p>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Open the cart, enter your coupon code in the
+                    Coupon field and click Add. Try <strong class="text-black-500">SMART10</strong> for 10% off your
+                    order!</p>
             </details>
             <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
                 <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
                     Can I return a product?
                     <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Yes, we offer a 7-day return policy on all eligible items. Contact us within 7 days of delivery to initiate a return.</p>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">Yes, we offer a 7-day return policy on all
+                    eligible items. Contact us within 7 days of delivery to initiate a return.</p>
             </details>
             <details class="border border-gray-200 rounded-xl p-5 group cursor-pointer">
                 <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
                     What payment methods do you accept?
                     <span class="text-orange-500 text-lg font-bold group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We accept bKash, Nagad, Rocket, and cash on delivery across all areas of Bangladesh.</p>
+                <p class="text-gray-500 text-sm mt-3 leading-relaxed">We accept bKash, Nagad, Rocket, and cash on
+                    delivery across all areas of Bangladesh.</p>
             </details>
         </div>
     </div>
@@ -367,7 +392,9 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="fixed bottom-8 right-8 sm:bottom-6 sm:right-6 bg-orange-500 hover:bg-orange-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-lg transition-all duration-300 z-50 hidden hover:bottom-10 sm:hover:bottom-8" title="Back to top">
+    <button id="backToTopBtn"
+        class="fixed bottom-8 right-8 sm:bottom-6 sm:right-6 bg-orange-500 hover:bg-orange-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-lg transition-all duration-300 z-50 hidden hover:bottom-10 sm:hover:bottom-8"
+        title="Back to top">
         ↑
     </button>
 
